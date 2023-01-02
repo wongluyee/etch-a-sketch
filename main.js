@@ -1,16 +1,12 @@
-const container = document.getElementsByClassName("container");
+const container = document.getElementById("container");
 
-let row;
-let column;
+function makeRows(rows, columns) {
+  container.style.setProperty('--grid-rows', rows);
+  container.style.setProperty('--grid-columns', columns);
+  for (c = 0; c < (rows * columns); c++) {
+    let cell = document.createElement("div");
+    container.appendChild(cell).className = "grid-item";
+  };
+};
 
-function makeGrid(size = 16){
-    for (let y = 0; y < size; y++) {
-        for (let x = 0; x < size; x++){
-            column = document.createElement("div");
-            container.appendChild(column);
-        }
-
-        row = document.createElement("div");
-        container.appendChild(row);
-    }
-}
+makeRows(16, 16);
