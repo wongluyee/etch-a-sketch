@@ -22,11 +22,12 @@
     border: 1px dotted rgb(0, 0, 0);
   }
 
-  .change-grid {
-    margin:30px;
-  }
-
   .btn-container {
+    margin-top:20px;
     display:flex;
     align-items:center;
+  }
+
+  .change-grid, .clear-grid {
+    margin:20px;
   }
