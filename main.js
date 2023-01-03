@@ -43,9 +43,18 @@ function changeGrid(){
     //So that if user click cancel, the grid would not disappear
     if (input === null) return;
 
-    removeGrid();
-    makeGrid(input,input);
-    draw();
+    //Check the input, if it is not a number or it is more than 100, alert an error message and jump out of function.
+    if (isNaN(input)) {
+        alert("Please enter a number.");
+        return;
+    } else if (input > 99) {
+        alert("Please enter number less than 100.");
+        return;
+    } else {
+        removeGrid();
+        makeGrid(input,input);
+        draw();
+    }
 }
 
 function clearGrid(){
